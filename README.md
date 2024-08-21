@@ -1,21 +1,35 @@
-# Project 3: Spots
+# Spots
 
-### Overview  
+## Overview
+**Spots** is a web application that allows users to share images, receive likes, and interact by liking other users' images. The platform is designed to provide a simple and intuitive user experience, with a focus on responsive design to ensure a seamless experience across all devices.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Features
+- **Image Sharing**: Users can upload and share their images with the community.
+- **Like System**: Users can like images posted by others, and receive likes on their own images.
+- **Responsive Design**: The application is fully responsive, ensuring it works well on desktops, tablets, and mobile devices.
+
+## Tech Stack
+- **HTML**: Markup language used for structuring the web pages.
+- **CSS**: Styling language used for designing the user interface.
+- **Figma**: Tool used for creating the initial design and prototypes.
+- **Responsive Design**: Ensures that the application is accessible and functional across various devices and screen sizes.
+
+## Deployment
+
+This webpage is deployed to GitHub Pages
+
+- [Deployment Link](https://nikitastambul.github.io/se_project_spots/)
+
+## Installation
+To get a local copy up and running, follow these simple steps:
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/NikitaStambul/se_project_spots.git
+    ```
+
+2. **Open `index.html` in your browser**:
+    - Simply double-click the `index.html` file, or open it through your browser's file open option.
+
+## Contact
+For any inquiries, please reach out to [mykyta.stambul@gmail.com](mailto:mykyta.stambul@gmail.com).
