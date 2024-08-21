@@ -1,0 +1,136 @@
+.profile {
+  display: flex;
+  padding: 34px 0 20px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+}
+
+.profile__avatar {
+  margin-right: 20px;
+  border-radius: 8px;
+  width: 190px;
+  height: 190px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  max-width: 420px;
+}
+
+.profile__name {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.profile__description {
+  margin: 0;
+  width: 100%;
+  line-height: 1;
+  opacity: 0.7;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.profile__edit-btn {
+  padding: 0;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.profile__edit-btn:hover {
+  opacity: 1;
+}
+
+.profile__edit-btn::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-image: url("../images/pencil.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.profile__add-btn {
+  padding: 18px 32px;
+  margin: auto 0 0 auto;
+  background-color: var(--color-font-main);
+  color: var(--color-font-contrast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+  border-radius: 8px;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.profile__add-btn:hover {
+  opacity: 0.8;
+}
+
+.profile__add-btn::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-image: url("../images/plus.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 630px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    max-width: 413px;
+  }
+
+  .profile__avatar {
+    margin: 0 0 12px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile__column {
+    align-items: center;
+    margin: 0 0 20px;
+    max-width: none;
+  }
+
+  .profile__name {
+    font-size: 20px;
+    margin: 0 0 6px;
+  }
+
+  .profile__description {
+    margin: 0 0 32px;
+  }
+
+  .profile__add-btn {
+    margin: 0;
+    width: 100%;
+  }
+}

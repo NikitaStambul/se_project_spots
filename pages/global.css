@@ -1,0 +1,12 @@
+:root {
+  --color-font-main: #212121;
+  --color-font-contrast: #fcf5e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
