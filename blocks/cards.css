@@ -8,3 +8,9 @@
   column-gap: 20px;
   row-gap: 40px;
 }
+
+@media screen and (max-width: 630px) {
+  .cards__list {
+    row-gap: 20px;
+  }
+}

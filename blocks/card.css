@@ -28,6 +28,7 @@
 .card__like-btn {
   background-color: transparent;
   border: none;
+  cursor: pointer;
   background-image: url("../images/like.svg");
   background-position: center;
   background-size: cover;
@@ -41,4 +42,11 @@
 
 .card__like-btn:hover {
   opacity: 1;
+}
+
+@media screen and (max-width: 630px) {
+  .card__title {
+    font-size: 16px;
+    line-height: 1;
+  }
 }
