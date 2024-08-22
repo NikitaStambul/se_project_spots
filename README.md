@@ -33,3 +33,7 @@ To get a local copy up and running, follow these simple steps:
 
 ## Contact
 For any inquiries, please reach out to [mykyta.stambul@gmail.com](mailto:mykyta.stambul@gmail.com).
+
+## Video
+
+- [Video Link](https://drive.google.com/file/d/1ZpCyHHzmADmOP0hZ0jL9Pf607ME1okN9/view?usp=drive_link)
