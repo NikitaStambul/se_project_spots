@@ -1,0 +1,126 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  padding: 10px;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__container {
+  background-color: #fff;
+  max-width: 730px;
+  padding: 36px 50px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.modal__close-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-image: url("../images/close.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+
+.model__label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: rgba(33, 33, 33, 0.7);
+}
+
+.modal__input {
+  border: 1px solid rgba(33, 33, 33, 0.4);
+  border-radius: 8px;
+  width: 100%;
+  height: 48px;
+  padding: 16px 12px;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-font-main);
+  font-weight: 500;
+}
+
+.modal__input:hover {
+  border: 1px solid rgba(33, 33, 33, 1);
+  transition: border 0.3s;
+}
+
+.modal__input::-webkit-input-placeholder {
+  color: rgba(33, 33, 33, 0.3);
+}
+
+.modal__submit-btn {
+  padding: 18px;
+  border: none;
+  background-color: var(--color-font-main);
+  color: var(--color-font-contrast);
+  border-radius: 8px;
+  width: 156px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.modal__submit-btn:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 630px) {
+  .modal__container {
+    padding: 12px;
+  }
+
+  .modal__header {
+    margin-bottom: 24px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+  }
+
+  .modal__form {
+    row-gap: 24px;
+  }
+
+  .modal__submit-btn {
+    width: 100%;
+  }
+}
