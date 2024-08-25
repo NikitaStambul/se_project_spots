@@ -49,6 +49,12 @@
   height: 40px;
   width: 40px;
   padding: 0;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+.modal__close-btn:hover {
+  opacity: 1;
 }
 
 .modal__form {
