@@ -39,7 +39,7 @@ const closeBtn = editModal.querySelector(".modal__close-btn");
 editBtn.addEventListener("click", openEditModal);
 closeBtn.addEventListener("click", closeEditModal);
 
-const editForm = editModal.querySelector("#edit-profile-form");
+const editForm = document.forms["edit-profile"];
 editForm.addEventListener("submit", handleEditProfileFormSubmit);
 
 const cardTemplate = document.querySelector("#card-template");
