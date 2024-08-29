@@ -63,7 +63,7 @@
   row-gap: 32px;
 }
 
-.model__label {
+.modal__label {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
