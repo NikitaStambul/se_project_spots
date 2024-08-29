@@ -91,6 +91,7 @@
                 id="profile-name-input"
                 class="modal__input"
                 placeholder="Type your name"
+                required
               />
             </label>
             <label for="profile-description-input" class="modal__label">
@@ -100,6 +101,7 @@
                 id="profile-description-input"
                 class="modal__input"
                 placeholder="Describe yourself"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
@@ -121,6 +123,7 @@
                 class="modal__input"
                 placeholder="Paste a link to the picture"
                 name="link"
+                required
               />
             </label>
             <label for="post-name-input" class="modal__label">
@@ -131,10 +134,24 @@
                 class="modal__input"
                 placeholder="Type your caption"
                 name="name"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
+        </div>
+      </div>
+      <div class="modal" id="preview-modal">
+        <div class="modal__container modal__container_type_preview">
+          <button
+            class="modal__close-btn modal__close-btn_type_preview"
+          ></button>
+          <img
+            class="modal__image"
+            src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg"
+            alt=""
+          />
+          <p class="modal__caption">Val Thorens</p>
         </div>
       </div>
     </div>

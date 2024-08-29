@@ -1,27 +1,31 @@
 const initialCards = [
   {
+    name: "Golden Gate bridge",
+    link: "  https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
-    link: "images/1-photo-by-moritz-feldmann-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
   {
     name: "Restaurant terrace",
-    link: "images/2-photo-by-ceiline-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
   },
   {
     name: "An outdoor cafe",
-    link: "images/3-photo-by-tubanur-dogan-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
   },
   {
     name: "A very long bridge, over the forest and through the trees",
-    link: "images/4-photo-by-maurice-laschet-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
   {
     name: "Tunnel with morning light",
-    link: "images/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
   },
   {
     name: "Mountain house",
-    link: "images/6-photo-by-moritz-feldmann-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
 
@@ -61,6 +65,12 @@ newPostForm.addEventListener("submit", handleNewPostSubmit);
 
 loadInitialCards();
 
+// preview
+
+const previewModal = document.querySelector("#preview-modal");
+const previewCloseBtn = previewModal.querySelector(".modal__close-btn");
+previewCloseBtn.addEventListener("click", () => closeModal(previewModal));
+
 // functions
 
 function openModal(modal) {
@@ -97,7 +107,7 @@ function handleNewPostSubmit(event) {
   closeModal(newPostModal);
 }
 
-function getCardElement(data) {
+function getCardElement({ link, name }) {
   const cardTemplate = document.querySelector("#card-template");
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -107,13 +117,22 @@ function getCardElement(data) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
-  cardNameEl.textContent = data.name;
-  cardImageEl.setAttribute("src", data.link);
-  cardImageEl.setAttribute("alt", data.name + " image");
+  cardNameEl.textContent = name;
+  cardImageEl.setAttribute("src", link);
+  cardImageEl.setAttribute("alt", name + " image");
   cardLikeBtn.addEventListener("click", () =>
     cardLikeBtn.classList.toggle("card__like-btn_is-liked")
   );
   cardDeleteBtn.addEventListener("click", () => cardElement.remove());
+  cardImageEl.addEventListener("click", () => {
+    const previewImageEl = previewModal.querySelector(".modal__image");
+    const captionEl = previewModal.querySelector(".modal__caption");
+    previewImageEl.setAttribute("src", link);
+    previewImageEl.setAttribute("alt", name + " image");
+    captionEl.textContent = name;
+
+    openModal(previewModal);
+  });
 
   return cardElement;
 }
