@@ -78,6 +78,18 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closeModal(modal));
 });
 
+// close modals on overlay click
+
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target.classList.contains("modal_opened")) {
+      event.target.classList.remove("modal_opened");
+    }
+  });
+});
+
 // functions
 
 function setProfileFormValues() {
@@ -91,6 +103,14 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+}
+
+function closeModalOnEscape(event) {
+  const modals = document.querySelectorAll(".modal_opened");
+
+  if (event.key === "Escape") {
+    modals.forEach((modal) => closeModal(modal));
+  }
 }
 
 function handleEditProfileFormSubmit(event) {
@@ -154,5 +174,6 @@ function loadInitialCards() {
   });
 }
 
+document.addEventListener("keydown", closeModalOnEscape);
 setProfileFormValues();
 loadInitialCards();
