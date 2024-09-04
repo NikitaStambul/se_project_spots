@@ -59,10 +59,7 @@ const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostForm = document.forms["new-post"];
 const postSubmitBtn = newPostForm.querySelector(".modal__submit-btn");
 
-newPostBtn.addEventListener("click", () => {
-  resetValidation([newPostImageLinkInput, newPostNameInput]);
-  openModal(newPostModal);
-});
+newPostBtn.addEventListener("click", () => openModal(newPostModal));
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
 // preview
@@ -85,7 +82,7 @@ const modals = document.querySelectorAll(".modal");
 modals.forEach((modal) => {
   modal.addEventListener("click", (event) => {
     if (event.target.classList.contains("modal_opened")) {
-      event.target.classList.remove("modal_opened");
+      closeModal(event.target);
     }
   });
 });
@@ -98,18 +95,19 @@ function setProfileFormValues() {
 }
 
 function openModal(modal) {
+  document.addEventListener("keydown", closeModalOnEscape);
   modal.classList.add("modal_opened");
 }
 
 function closeModal(modal) {
+  document.removeEventListener("keydown", closeModalOnEscape);
   modal.classList.remove("modal_opened");
 }
 
 function closeModalOnEscape(event) {
-  const modals = document.querySelectorAll(".modal_opened");
-
   if (event.key === "Escape") {
-    modals.forEach((modal) => closeModal(modal));
+    const modals = document.querySelectorAll(".modal_opened");
+    modals.forEach(closeModal);
   }
 }
 
@@ -126,8 +124,7 @@ function handleNewPostSubmit(event) {
   event.preventDefault();
   const link = newPostImageLinkInput.value;
   const name = newPostNameInput.value;
-  newPostImageLinkInput.value = "";
-  newPostNameInput.value = "";
+  event.target.reset();
 
   const cardEl = getCardElement({
     link,
@@ -136,7 +133,7 @@ function handleNewPostSubmit(event) {
 
   cardsList.prepend(cardEl);
   closeModal(newPostModal);
-  disableButton(postSubmitBtn);
+  disableButton(postSubmitBtn, formValidationConfig);
 }
 
 function getCardElement({ link, name }) {
@@ -174,6 +171,5 @@ function loadInitialCards() {
   });
 }
 
-document.addEventListener("keydown", closeModalOnEscape);
 setProfileFormValues();
 loadInitialCards();
