@@ -81,4 +81,4 @@ function resetValidation(inputList) {
   inputList.forEach((inputEl) => hideInputError(inputEl, formValidationConfig));
 }
 
-enableValidation(formValidationConfig);
+export { enableValidation, resetValidation, disableButton, formValidationConfig };

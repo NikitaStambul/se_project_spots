@@ -144,7 +144,7 @@
 .modal__container_type_preview {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   position: relative;
   padding: 0;
   background-color: transparent;

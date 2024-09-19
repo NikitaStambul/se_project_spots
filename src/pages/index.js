@@ -1,3 +1,18 @@
+import "./index.css";
+import {
+  enableValidation,
+  resetValidation,
+  disableButton,
+  formValidationConfig,
+} from "../scripts/validation.js";
+import logoSrc from "../images/logo.svg";
+import avatarSrc from "../images/avatar.jpg";
+
+const logoImageEl = document.getElementById("logo");
+logoImageEl.src = logoSrc;
+const avatarImageEl = document.getElementById("avatar");
+avatarImageEl.src = avatarSrc;
+
 const initialCards = [
   {
     name: "Golden Gate bridge",
@@ -173,3 +188,4 @@ function loadInitialCards() {
 
 setProfileFormValues();
 loadInitialCards();
+enableValidation(formValidationConfig);
