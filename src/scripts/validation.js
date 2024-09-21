@@ -1,12 +1,12 @@
 const formValidationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitBtnSelector: ".modal__submit-btn",
+  submitBtnSelector: ".modal__btn",
   errorSelector: ".modal__error",
   inputTypeErrorClass: "modal__input_type_error",
   errorActiveClass: "modal__error_active",
-  inactiveSubmitBtnClass: "modal__submit-btn_inactive",
-}
+  inactiveSubmitBtnClass: "modal__btn_inactive",
+};
 
 function enableValidation(config) {
   const formList = document.querySelectorAll(config.formSelector);
@@ -81,4 +81,9 @@ function resetValidation(inputList) {
   inputList.forEach((inputEl) => hideInputError(inputEl, formValidationConfig));
 }
 
-export { enableValidation, resetValidation, disableButton, formValidationConfig };
+export {
+  enableValidation,
+  resetValidation,
+  disableButton,
+  formValidationConfig,
+};

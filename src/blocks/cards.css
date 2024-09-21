@@ -4,7 +4,6 @@
   padding: 20px 0 36px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 413px));
-  justify-content: center;
   column-gap: 20px;
   row-gap: 40px;
 }
