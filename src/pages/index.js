@@ -56,6 +56,10 @@ newPostForm.addEventListener("submit", handleNewPostSubmit);
 // delete post
 const deletePostModal = document.querySelector("#delete-post-modal");
 const deletePostForm = document.forms["delete-post"];
+const deletePostCancelBtn = document.querySelector(".modal__btn_cancel");
+deletePostCancelBtn.addEventListener("click", () =>
+  closeModal(deletePostModal)
+);
 deletePostForm.addEventListener("submit", handlePostDelete);
 
 // preview
@@ -155,7 +159,9 @@ function handleNewPostSubmit(evt) {
       closeModal(newPostModal);
     })
     .catch((err) => console.error(err))
-    .finally(() => setBtnText(saveBtnEl, false, "Add post", "Adding post..."));
+    .finally(() =>
+      setBtnText(addPostBtnEl, false, "Add post", "Adding post...")
+    );
 
   evt.target.reset();
   disableButton(postSubmitBtn, formValidationConfig);
