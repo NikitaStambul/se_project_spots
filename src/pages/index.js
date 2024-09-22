@@ -111,7 +111,7 @@ function handleAvatarFormSubmit(evt) {
   const saveBtnEl = evt.submitter;
   const { avatar } = evt.target.elements;
 
-  setBtnText(saveBtnEl, false);
+  setBtnText(saveBtnEl, true);
   api
     .editUserAvatar(avatar.value)
     .then((data) => {
@@ -119,7 +119,7 @@ function handleAvatarFormSubmit(evt) {
       closeModal(editAvatarModal);
     })
     .catch((err) => console.error(err))
-    .finally(() => setBtnText(saveBtnEl, true));
+    .finally(() => setBtnText(saveBtnEl, false));
 }
 
 function handleEditProfileFormSubmit(evt) {
@@ -127,7 +127,7 @@ function handleEditProfileFormSubmit(evt) {
   const saveBtnEl = evt.submitter;
   const { name, about } = evt.target.elements;
 
-  setBtnText(saveBtnEl, false);
+  setBtnText(saveBtnEl, true);
   api
     .editUserInfo({
       name: name.value,
@@ -139,7 +139,7 @@ function handleEditProfileFormSubmit(evt) {
       closeModal(editProfileModal);
     })
     .catch((err) => console.error(err))
-    .finally(() => setBtnText(saveBtnEl, true));
+    .finally(() => setBtnText(saveBtnEl, false));
 }
 
 function handleNewPostSubmit(evt) {
@@ -157,14 +157,13 @@ function handleNewPostSubmit(evt) {
       const cardEl = getCardElement(cardData);
       cardList.prepend(cardEl);
       closeModal(newPostModal);
+      evt.target.reset();
+      disableButton(postSubmitBtn, formValidationConfig);
     })
     .catch((err) => console.error(err))
     .finally(() =>
       setBtnText(addPostBtnEl, false, "Add post", "Adding post...")
     );
-
-  evt.target.reset();
-  disableButton(postSubmitBtn, formValidationConfig);
 }
 
 function handlePostDelete(evt) {
@@ -225,7 +224,7 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-function initialFetch() {
+function getInitialData() {
   api
     .getAppInfo()
     .then(([cards, userInfo]) => {
@@ -244,4 +243,4 @@ function initialFetch() {
 enableValidation(formValidationConfig);
 setModalCloseBtnListeners();
 setModalOverlayCloseListeners();
-initialFetch();
+getInitialData();
