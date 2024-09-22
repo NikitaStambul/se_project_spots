@@ -67,6 +67,12 @@
   row-gap: 32px;
 }
 
+.modal__form_delete {
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: center;
+}
+
 .modal__label {
   display: flex;
   flex-direction: column;
@@ -113,7 +119,7 @@
   display: block;
 }
 
-.modal__submit-btn {
+.modal__btn {
   padding: 18px;
   border: none;
   background-color: var(--color-font-main);
@@ -124,17 +130,41 @@
   transition: opacity 0.3s;
 }
 
-.modal__submit-btn:hover {
+.modal__btn:hover {
   opacity: 0.8;
 }
 
-.modal__submit-btn_inactive {
+.modal__btn_inactive {
   cursor: default;
   opacity: 0.5;
 }
 
-.modal__submit-btn_inactive:hover {
+.modal__btn_inactive:hover {
   opacity: 0.5;
+}
+
+.modal__btn_delete {
+  background-color: #FF6565;
+  color: var(--color-font-main);
+  transition: background-color 0.3s;
+}
+
+.modal__btn_delete:hover {
+  opacity: 1;
+  background-color: #FF3333;
+}
+
+.modal__btn_cancel {
+  background-color: transparent;
+  color: var(--color-font-main);
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid var(--color-font-main);
+}
+
+.modal__btn_cancel:hover {
+  background-color: var(--color-font-main);
+  color: var(--color-font-contrast);
+  opacity: 1;
 }
 
 .modal__image {
@@ -196,7 +226,7 @@
     row-gap: 24px;
   }
 
-  .modal__submit-btn {
+  .modal__btn {
     width: 100%;
   }
 
